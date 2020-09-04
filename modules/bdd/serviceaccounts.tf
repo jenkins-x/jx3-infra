@@ -30,5 +30,5 @@ resource "google_project_iam_member" "tekton_sa_kube_engine_developer_binding" {
   provider = google
   role     = "roles/container.developer"
   member   = "serviceAccount:${var.tekton_sa_email}"
-  project = "jenkins-x-labs-bdd"
+  project = "jx-labs-infra"
 }
