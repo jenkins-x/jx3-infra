@@ -48,6 +48,13 @@ module "jenkinsxio" {
   gcp_project     = var.gcp_project
 }
 
+module "jx-labs-infra" {
+  source = "./modules/jx-labs-infra"
+  tekton_sa_email = module.jx.tekton_sa_email
+  tekton_sa_name  = module.jx.tekton_sa_name
+  gcp_project     = var.gcp_project
+}
+
 module "bdd" {
   source = "./modules/bdd"
   tekton_sa_email = module.jx.tekton_sa_email
